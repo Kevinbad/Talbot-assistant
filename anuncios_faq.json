@@ -25,12 +25,12 @@
       "answer": "Podemos procesar pólizas canceladas únicamente si el enrollment se hace mediante llamada, sin embargo no podemos recuperar pólizas que se hayan cancelado posterior al enrollment. **Management, 2025-11-11**"
     },
     {
-      "question": "¿Podemos procesar UHC bajo Neil Dallas?",
-      "answer": "Si ven UHC bajo Neil Dallas para el 2026 reprocesarla, pero NO USEN EL OVERRIDE. Usen sus NPNs. **Management, 2025-11-12**"
+      "question": "¿Podemos procesar UHC bajo ND?",
+      "answer": "Si ven UHC bajo ND para el 2026 reprocesarla, pero NO USEN EL OVERRIDE. Usen sus NPNs. **Management, 2025-11-12**"
     },
     {
       "question": "¿Qué es Already Processed?",
-      "answer": "Nueva disposición para pólizas del 2025 que continúan activas bajo su propio NPN o Neil Dallas. **Management, 2025-09-09**"
+      "answer": "Nueva disposición para pólizas del 2025 que continúan activas bajo su propio NPN o ND. **Management, 2025-09-09**"
     },
     {
       "question": "¿Qué tipo de agentes están incluidos en la \"Hot List\"?",

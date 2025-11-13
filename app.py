@@ -4,6 +4,9 @@ import subprocess
 import json
 import time
 from query import answer_query
+from streamlit_cookies import CookieManager
+
+cookies = CookieManager()
 
 st.set_page_config(
     page_title="Talbot Announcements - Bot de Anuncios",
@@ -12,8 +15,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Login simple
-if "logged_in" not in st.session_state:
+# Login simple with cookie persistence (30 min timeout)
+login_time = cookies.get('login_time')
+if login_time and time.time() - float(login_time) < 30 * 60:
+    st.session_state.logged_in = True
+else:
     st.session_state.logged_in = False
 
 if not st.session_state.logged_in:
@@ -31,6 +37,7 @@ if not st.session_state.logged_in:
                 correct_password = os.environ.get('BOT_PASSWORD', 'prueba123')
                 if username == correct_username and password == correct_password:
                     st.session_state.logged_in = True
+                    cookies.set('login_time', str(time.time()))
                     st.success("¡Bienvenido!")
                     st.rerun()
                 else:
@@ -185,8 +192,6 @@ with st.spinner("Initializing Talbot Announcements..."):
     time.sleep(0.5)  # Brief initialization delay
 
 st.markdown("<h1 style='text-align: center; color: #0A0A0A;'>🤖 Talbot Announcements</h1>", unsafe_allow_html=True)
-# Hero image placeholder - replace with actual image path
-st.image("https://via.placeholder.com/800x300/FFFFFF/F9F6EF?text=Talbot+Assistant", width='stretch')
 st.markdown("---")
 
 # Sidebar para re-indexar y info

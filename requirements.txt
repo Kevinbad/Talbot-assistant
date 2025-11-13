@@ -3,6 +3,7 @@ faiss-cpu
 pdfplumber
 streamlit
 streamlit-authenticator
+streamlit-cookies
 numpy
 tqdm
 python-dateutil
