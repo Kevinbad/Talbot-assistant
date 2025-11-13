@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "question": "¿Podemos procesar en Molina?",
+      "answer": "No, no podemos procesar nada nuevo con Molina (ni en llamadas ni manualmente). **Management, 2025-11-12**"
+    },
+    {
+      "question": "¿Tenemos licencia en Oscar?",
+      "answer": "Sí, volvimos a procesar leads de Óscar, tenemos licencia de nuevo. **Management, 2025-09-08**"
+    },
+    {
+      "question": "¿Cómo manejar remotos?",
+      "answer": "Cuando dejen un remoto libre, especifiquen el número de remoto que dejaron de utilizar. **Management, 2025-09-03**"
+    },
+    {
+      "question": "¿Podemos procesar BCBS en TX?",
+      "answer": "No, no vamos a procesar BCBS en TX hasta nuevo aviso, solo para quienes van a realizar enrollments en Sherpas que no son First Enroll (AOBG). **Management, 2025-09-03**"
+    },
+    {
+      "question": "¿Cómo llenar calendarios?",
+      "answer": "Deben seguir llenando el calendario todos, los que están haciendo enrollments por medio de llamadas. Documentarlo en el calendario del sherpa usado. **Management, 2025-09-03**"
+    },
+    {
+      "question": "¿Qué hacer con pólizas canceladas?",
+      "answer": "Podemos procesar pólizas canceladas únicamente si el enrollment se hace mediante llamada, sin embargo no podemos recuperar pólizas que se hayan cancelado posterior al enrollment. **Management, 2025-11-11**"
+    },
+    {
+      "question": "¿Podemos procesar UHC bajo Neil Dallas?",
+      "answer": "Si ven UHC bajo Neil Dallas para el 2026 reprocesarla, pero NO USEN EL OVERRIDE. Usen sus NPNs. **Management, 2025-11-12**"
+    },
+    {
+      "question": "¿Qué es Already Processed?",
+      "answer": "Nueva disposición para pólizas del 2025 que continúan activas bajo su propio NPN o Neil Dallas. **Management, 2025-09-09**"
+    },
+    {
+      "question": "¿Qué tipo de agentes están incluidos en la \"Hot List\"?",
+      "answer": "En la \"Hot List\" van a encontrar los agentes de la \"do not touch\" y los agentes del grupo de Tristen.\n **Management, 2025-11-13**"
+    },
+    {
+      "question": "¿Dónde se encuentran los leads de complaints que debemos buscar?",
+      "answer": "Los leads de complaints que debemos buscar están en el \"do not touch.\n **Management, 2025-11-13**"
+    }
+  ]
+}
