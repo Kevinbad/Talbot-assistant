@@ -1,0 +1,9 @@
+sentence-transformers
+faiss-cpu
+pdfplumber
+streamlit
+streamlit-authenticator
+numpy
+tqdm
+python-dateutil
+scikit-learn
