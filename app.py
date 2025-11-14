@@ -18,8 +18,9 @@ config = {
     'credentials': {
         'usernames': {
             os.environ.get('BOT_USERNAME', 'test'): {
+                'email': 'test@example.com',
                 'name': os.environ.get('BOT_USERNAME', 'test'),
-                'password': os.environ.get('BOT_PASSWORD', 'prueba123')
+                'password': stauth.Hasher([os.environ.get('BOT_PASSWORD', 'prueba123')]).generate()[0]
             }
         }
     },
