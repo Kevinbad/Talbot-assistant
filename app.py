@@ -38,7 +38,6 @@ if not st.session_state.logged_in:
                 if username == correct_username and password == correct_password:
                     st.session_state.logged_in = True
                     cookies.set('login_time', str(time.time()))
-                    st.success("¡Bienvenido!")
                 else:
                     st.error("Usuario o contraseña incorrectos")
     st.stop()
