@@ -4,7 +4,9 @@ import subprocess
 import json
 import time
 from query import answer_query
-import streamlit_authenticator as stauth
+from streamlit_cookies import CookieManager
+
+cookies = CookieManager()
 
 st.set_page_config(
     page_title="Talbot Announcements - Bot de Anuncios",
@@ -13,37 +15,32 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Login with streamlit-authenticator for cookie persistence (30 min timeout)
-config = {
-    'credentials': {
-        'usernames': {
-            os.environ.get('BOT_USERNAME', 'test'): {
-                'email': 'test@example.com',
-                'name': os.environ.get('BOT_USERNAME', 'test'),
-                'password': stauth.Hasher([os.environ.get('BOT_PASSWORD', 'prueba123')]).generate()[0]
-            }
-        }
-    },
-    'cookie': {
-        'expiry_days': 30/1440,  # 30 min in days
-        'key': 'talbot_login_key',
-        'name': 'talbot_login'
-    },
-    'preauthorized': {
-        'emails': []
-    }
-}
-authenticator = stauth.Authenticate(config, 'talbot_cookie', 'talbot_signature', cookie_expiry_days=30/1440)
+# Login simple with cookie persistence (30 min timeout)
+login_time = cookies.get('login_time')
+if login_time and time.time() - float(login_time) < 30 * 60:
+    st.session_state.logged_in = True
+else:
+    st.session_state.logged_in = False
 
-name, authentication_status, username = authenticator.login('Login', 'main')
-
-if authentication_status:
-    # App content here
-    pass
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
-elif authentication_status == None:
-    st.warning('Please enter your username and password')
+if not st.session_state.logged_in:
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.title("🔐 Talbot Announcements")
+        st.markdown("<div style='margin-bottom: 40px;'></div>", unsafe_allow_html=True)
+        with st.form("login_form"):
+            st.markdown("<h3 style='text-align: center;'>Ingresa tus credenciales</h3>", unsafe_allow_html=True)
+            username = st.text_input("Usuario")
+            password = st.text_input("Contraseña", type="password")
+            submitted = st.form_submit_button("Iniciar Sesión")
+            if submitted:
+                correct_username = 'test'
+                correct_password = 'prueba123'
+                if username == correct_username and password == correct_password:
+                    st.session_state.logged_in = True
+                    cookies.set('login_time', str(time.time()))
+                    st.success("¡Bienvenido!")
+                else:
+                    st.error("Usuario o contraseña incorrectos")
     st.stop()
 
 # Refined Apple-inspired CSS with cooler tones
